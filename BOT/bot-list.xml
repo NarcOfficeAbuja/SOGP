@@ -1,0 +1,52 @@
+System.Xml.XmlDocument
+<?xml version="1.0" encoding="utf-8"?>
+<Objects>
+  <Object>
+    <Property Name="name">Prof Jerry Gana</Property>
+    <Property Name="address">18, Aso Drive, Asokoro</Property>
+    <Property Name="location">Abuja</Property>
+    <Property Name="salutation">Sir</Property>
+  </Object>
+  <Object>
+    <Property Name="name">Dr Paul Adefarasin</Property>
+    <Property Name="address">Rock Cathedral Drive, Lekki-Epe ExpressWay</Property>
+    <Property Name="location">Lagos</Property>
+    <Property Name="salutation">Sir</Property>
+  </Object>
+  <Object>
+    <Property Name="name">Dr Tony Rapu</Property>
+    <Property Name="address">Freedom Way, End of Admiralty Way, Lekki Phase 1</Property>
+    <Property Name="location">Lagos</Property>
+    <Property Name="salutation">Sir</Property>
+  </Object>
+  <Object>
+    <Property Name="name">Dr Pax Harry</Property>
+    <Property Name="address">9 Lephalala Close, Maitama</Property>
+    <Property Name="location">Abuja</Property>
+    <Property Name="salutation">Sir</Property>
+  </Object>
+  <Object>
+    <Property Name="name">Mr Stephen Oronsaye</Property>
+    <Property Name="address">15, Bola Ige Close, Asokoro</Property>
+    <Property Name="location">Abuja</Property>
+    <Property Name="salutation">Sir</Property>
+  </Object>
+  <Object>
+    <Property Name="name">Prof Yinka Omorogbe</Property>
+    <Property Name="address">Edo State Ministry of Justice</Property>
+    <Property Name="location">Benin City</Property>
+    <Property Name="salutation">Ma</Property>
+  </Object>
+  <Object>
+    <Property Name="name">Dr Chidi Odinkalu</Property>
+    <Property Name="address" />
+    <Property Name="location">Abuja</Property>
+    <Property Name="salutation">Sir</Property>
+  </Object>
+  <Object>
+    <Property Name="name">H.E. Senator Lyel Imoke</Property>
+    <Property Name="address">27, Suleiman Barau Crescent, Aso Villa, Asokoro</Property>
+    <Property Name="location">Abuja</Property>
+    <Property Name="salutation">Your Excellency</Property>
+  </Object>
+</Objects>
