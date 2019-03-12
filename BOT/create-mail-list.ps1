@@ -1,36 +1,6 @@
 # Create mailing list for SOGP BOT
 
-# Write a function that takes as input individuals' data
-# and returns a pscustomobject
-function  New-ContactDetailsObject
-{
-    param(
-        $title = $null,
-        $name = $null,
-        $address = $null,
-        $location = $null,
-        [Parameter(Mandatory=$false)]
-        [switch]$isFemale = $false
-    )
-
-    # Deduce salutations for use in mail
-    if ($title -like "*H.E.*" -or $title -like "*Excellency*") {
-        $salutation = "Your Excellency"
-    } else {
-        if ($isFemale) {
-            $salutation = "Ma"
-        } else {
-            $salutation = "Sir"
-        }
-    }
-
-    [PSCustomObject]@{
-        name = "$title $name"
-        address = $address
-        location = $location
-        salutation = $salutation
-    }
-}
+. "$PSScriptRoot/contactdetailsobject.ps1"
 
 $town = @{
     abj = "Abuja"
@@ -87,5 +57,5 @@ $contactDetailsArray +=  New-ContactDetailsObject -title "H.E. Senator" `
 
 # Generate files
 $contactDetailsArray | Export-Csv -Path "./bot-list.csv" -NoTypeInformation
-$contactDetailsArray | ConvertTo-Json -Depth 1 | Add-Content -Path "./bot-list.json"
-$contactDetailsArray | ConvertTo-Xml -Depth 1 -As String -NoTypeInformation | Add-Content -Path "./bot-list.xml"
+$contactDetailsArray | ConvertTo-Json -Depth 1 | Set-Content -Path "./bot-list.json"
+$contactDetailsArray | ConvertTo-Xml -Depth 1 -As String -NoTypeInformation | Set-Content -Path "./bot-list.xml"
