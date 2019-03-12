@@ -21,7 +21,7 @@ function  New-ContactDetailsObject
     New-ContactDetailsObject -title "Mrs" -name "Jane Taylaur" -address "6, Tapgun Drive" -location "Abuja"  
 .NOTES
     Author: Victor Ordu
-    Last Edit: 2019-03-11
+    Last Edit: 2019-03-12
     Version 1.0 - initial release
 #>
     param(
