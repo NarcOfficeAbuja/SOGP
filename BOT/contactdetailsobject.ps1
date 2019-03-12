@@ -25,10 +25,18 @@ function  New-ContactDetailsObject
     Version 1.0 - initial release
 #>
     param(
-        $title = $null,
-        $name = $null,
-        $address = $null,
-        $location = $null,
+        [Parameter(Mandatory=$true)]
+        [string]$title = $null,
+        
+        [Parameter(Mandatory=$true)]
+        [string]$name = $null,
+        
+        [Parameter(Mandatory=$true)]
+        [string]$address = $null,
+        
+        [Parameter(Mandatory=$true)]
+        [string]$location = $null,
+        
         [Parameter(Mandatory=$false)]
         [switch]$isFemale = $false
     )
