@@ -1,24 +1,29 @@
 # Create data tables
 
 library(RSQLite)
+library(here)
 
-dataDir <- file.path(here::here(), "data")
+source(file.path(here(), "src", "custom.R"))
+
+dataDir <- file.path(here(), "data")
 if(!dir.exists(dataDir))
   dir.create(dataDir)
 
-csvFiles <- 
-  if (interactive()) 
-    c("bot-list.csv", "mail_Jul_2019.csv", "media.csv") else
-      commandArgs(trailingOnly = TRUE)
+csvFiles <- if (interactive()) {
+  listCsvInDir(dataDir)
+} else {
+  commandArgs(trailingOnly = TRUE)
+}
 
-tableNames <- substr(csvFiles, 1, regexpr("\\.csv$", csvFiles) - 1)
+filenames <- basename(csvFiles)
+tableNames <-
+  substr(filenames, 1, regexpr("\\.csv$", filenames) - 1)
 
-purrr::map2(csvFiles, tableNames, function(x, y) {
-  csv <- file.path(dataDir, x)
-  df <- read.csv(csv, stringsAsFactors = TRUE)
+purrr::map2(csvFiles, tableNames, function(f, t) {
+  df <- read.csv(f, stringsAsFactors = TRUE)
   try({
     dbCon <- dbConnect(SQLite(), file.path(dataDir, "sogp.db"))
-    dbWriteTable(dbCon, y, df, overwrite = TRUE)
+    dbWriteTable(dbCon, t, df, overwrite = TRUE)
     dbDisconnect(dbCon)
   })
 })
